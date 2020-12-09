@@ -1,11 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Navi = (props) => {
+const Nav = styled.div`
+  margin-bottom: 100px;
+  background-color:#2196F3;
+  text-align: center;
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+`
+
+const Title = styled.h2`
+  color: #fff;
+  font-family: Arial;
+`
+
+function Navi() {
   return (
-    <div id="navbar">
-        <h2>React.js - Data Table</h2>
-    </div>
-  );
+    <Nav>
+      <Title>React.js - Data Table</Title>
+    </Nav>
+  )
 }
 
 export default Navi;

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
+
+const Footer = styled.div`
+    margin-top: 20px;
+`
 
 class TableFooter extends Component{
     render() {
         return (
-            <div id="tableFooter">
+            <Footer>
                 <p>Total: {this.props.users.length}</p>
-            </div>
+            </Footer>
         )
     }
 }

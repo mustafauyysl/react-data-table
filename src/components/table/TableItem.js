@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../toolbox/Button";
 import { FaBars, FaBeer, FaTrash } from "react-icons/fa";
+import styled from "styled-components";
 
 const actionsButton = [
   {
@@ -13,6 +14,69 @@ const actionsButton = [
   },
 ];
 
+const TableBody = styled.div`
+  & {
+    background-color: ${(props) =>
+      props.userId % 2 != 0 ? "#f9f9f9" : "#ffffff"};
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 992px) {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+`;
+
+const TableData = styled.div`
+  & {
+    float: left;
+    width: 20%;
+    text-align: center;
+    height: 60px;
+  }
+  @media screen and (max-width: 992px) {
+    & {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8em;
+      text-align: left;
+      width: 100%;
+    }
+    &:before {
+      float: left;
+      font-weight: bold;
+      width: 50%;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    &:nth-of-type(1):before {
+      content: "ID: ";
+      font-family: Arial;
+    }
+    &:nth-of-type(2):before {
+      content: "Name Surname: ";
+      font-family: Arial;
+    }
+    &:nth-of-type(3):before {
+      content: "Phone Number: ";
+      font-family: Arial;
+    }
+    &:nth-of-type(4):before {
+      content: "Email: ";
+      font-family: Arial;
+    }
+    &:nth-of-type(5):before {
+      content: "Actions: ";
+      font-family: Arial;
+    }
+  }
+`;
+
 class TableItem extends Component {
   renderActionsButton = () => {
     return actionsButton.map((button) => (
@@ -23,26 +87,21 @@ class TableItem extends Component {
   render() {
     const { userId, userName, userPhone, userEmail } = this.props;
     return (
-      <div
-        className="row"
-        style={{
-          backgroundColor: userId % 2 != 0 ? "#f9f9f9" : "#ffffff",
-        }}
-      >
-        <div className="col">
+      <TableBody userId={userId}>
+        <TableData>
           <p>{userId}</p>
-        </div>
-        <div className="col">
+        </TableData>
+        <TableData>
           <p>{userName}</p>
-        </div>
-        <div className="col">
+        </TableData>
+        <TableData>
           <p>{userPhone}</p>
-        </div>
-        <div className="col">
+        </TableData>
+        <TableData>
           <p>{userEmail}</p>
-        </div>
-        <div className="col">{this.renderActionsButton()}</div>
-      </div>
+        </TableData>
+        <TableData>{this.renderActionsButton()}</TableData>
+      </TableBody>
     );
   }
 }

@@ -1,12 +1,22 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import TableItem from "./TableItem";
 
+const EmpytContainer = styled.div`
+  width: 100%;
+  text-align: center;
+  background-color: #f9f9f9;
+  height: 50px;
+  padding-top: 7px;
+`
+
 class TableBody extends Component {
+  
   renderEmpytList = () => {
     return (
-      <div className="row">
-        <p className="col">Empyt List</p>
-      </div>
+      <EmpytContainer>
+        <p>Empyt List</p>
+      </EmpytContainer>
     );
   };
 
