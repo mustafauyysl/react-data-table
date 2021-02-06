@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -7,8 +7,6 @@ const GlobalStyle = createGlobalStyle`
     p {
         font-family: Arial
     }
-`
-
-
+`;
 
 export default GlobalStyle;

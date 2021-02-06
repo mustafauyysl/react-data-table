@@ -1,5 +1,5 @@
-import USERS from '../../data/dummy-data';
+import USERS from "../../data/dummy-data";
 
 export default {
-    users: USERS
-}
+  users: USERS,
+};

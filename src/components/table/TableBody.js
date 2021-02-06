@@ -8,10 +8,9 @@ const EmpytContainer = styled.div`
   background-color: #f9f9f9;
   height: 50px;
   padding-top: 7px;
-`
+`;
 
 class TableBody extends Component {
-  
   renderEmpytList = () => {
     return (
       <EmpytContainer>
